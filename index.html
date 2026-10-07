@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Time Units Converter ⏱️</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <div class="app-card">
+        <!-- Header -->
+        <header class="app-header">
+            <span class="badge">Time-Converter</span>
+            <h1>⏱️ TIME CONVERTER</h1>
+            <p>Konversi instan detik, menit, jam, hari, hingga minggu!</p>
+        </header>
+
+        <!-- Form Input -->
+        <div class="converter-box">
+            <div class="input-group">
+                <label for="time-value">Nilai Waktu</label>
+                <input type="number" id="time-value" value="1" min="0" step="any" placeholder="Masukkan angka...">
+            </div>
+
+            <div class="input-group">
+                <label for="unit-select">Satuan Asal</label>
+                <select id="unit-select">
+                    <option value="seconds">Detik (s)</option>
+                    <option value="minutes">Menit (m)</option>
+                    <option value="hours" selected>Jam (h)</option>
+                    <option value="days">Hari (d)</option>
+                    <option value="weeks">Minggu (w)</option>
+                </select>
+            </div>
+        </div>
+
+        <!-- Grid Cards Hasil Konversi Real-Time -->
+        <div class="results-grid">
+            
+            <!-- Detik -->
+            <div class="unit-card yellow" data-unit="seconds">
+                <div class="card-header">
+                    <span class="unit-icon">⚡</span>
+                    <span class="unit-name">Detik</span>
+                </div>
+                <strong class="unit-val" id="val-seconds">3600</strong>
+                <button class="btn-copy" onclick="copyValue('val-seconds')">📋 Salin</button>
+            </div>
+
+            <!-- Menit -->
+            <div class="unit-card pink" data-unit="minutes">
+                <div class="card-header">
+                    <span class="unit-icon">⏲️</span>
+                    <span class="unit-name">Menit</span>
+                </div>
+                <strong class="unit-val" id="val-minutes">60</strong>
+                <button class="btn-copy" onclick="copyValue('val-minutes')">📋 Salin</button>
+            </div>
+
+            <!-- Jam -->
+            <div class="unit-card blue" data-unit="hours">
+                <div class="card-header">
+                    <span class="unit-icon">⏰</span>
+                    <span class="unit-name">Jam</span>
+                </div>
+                <strong class="unit-val" id="val-hours">1</strong>
+                <button class="btn-copy" onclick="copyValue('val-hours')">📋 Salin</button>
+            </div>
+
+            <!-- Hari -->
+            <div class="unit-card green" data-unit="days">
+                <div class="card-header">
+                    <span class="unit-icon">📅</span>
+                    <span class="unit-name">Hari</span>
+                </div>
+                <strong class="unit-val" id="val-days">0.0417</strong>
+                <button class="btn-copy" onclick="copyValue('val-days')">📋 Salin</button>
+            </div>
+
+            <!-- Minggu -->
+            <div class="unit-card purple" data-unit="weeks">
+                <div class="card-header">
+                    <span class="unit-icon">🗓️</span>
+                    <span class="unit-name">Minggu</span>
+                </div>
+                <strong class="unit-val" id="val-weeks">0.006</strong>
+                <button class="btn-copy" onclick="copyValue('val-weeks')">📋 Salin</button>
+            </div>
+
+        </div>
+
+        <!-- Notification Toast -->
+        <div class="toast hidden" id="toast">Teks berhasil disalin! 🚀</div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
